@@ -21,6 +21,9 @@ export default function Header() {
           <NavLink to="/gallery" className="nav-link">
             Gallery
           </NavLink>
+          <NavLink to="/packages" className="nav-link">
+            Pooja Packages
+          </NavLink>
           <NavLink to="/contact" className="nav-link">
             Contact
           </NavLink>
