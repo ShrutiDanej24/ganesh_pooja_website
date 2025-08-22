@@ -1,0 +1,7 @@
+.section-title { margin: 0 0 14px; font-size: 28px; }
+.timings-grid {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.timing-card { padding: 16px; text-align: center; border: 1px solid #eee; }
+.timing-card h3 { margin: 0 0 6px; color: var(--brand); }

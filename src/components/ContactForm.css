@@ -1,0 +1,9 @@
+.contact-wrap { display: grid; gap: 16px; grid-template-columns: 2fr 1fr; }
+.contact-card, .contact-side { padding: 16px; }
+.contact-form { display: grid; gap: 10px; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ddd;
+}
+@media (max-width: 880px){
+  .contact-wrap { grid-template-columns: 1fr; }
+}

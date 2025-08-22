@@ -1,0 +1,6 @@
+.app-main { min-height: 70vh; }
+.floating-cta {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}

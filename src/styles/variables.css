@@ -1,0 +1,11 @@
+:root{
+  --brand: #e53935;       /* ganesha red */
+  --accent: #ffb300;      /* turmeric/gold */
+  --ink: #1a1a1a;
+  --muted: #6b7280;
+  --bg: #fff8f1;
+  --card: #ffffff;
+  --ring: rgba(229,57,53,0.2);
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0,0,0,.08);
+}
