@@ -1,4 +1,29 @@
-/* Keep this slim; app-level styling goes in global.css */
-html, body, #root {
-  height: 100%;
+/* Light (default) */
+body {
+  background: #fff;
+  color: #222;
+}
+
+/* Dark */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .header {
+  background: #1c1c1c;
+}
+body.dark .nav-link {
+  color: #eee;
+}
+body.dark .nav-link.active {
+  color: var(--brand, #ff7a1a);
+}
+body.dark .card,
+body.dark .hero-form-card,
+body.dark .service-card,
+body.dark .event-card {
+  background: #1e1e1e;
+  color: #eee;
+  border: 1px solid #333;
 }

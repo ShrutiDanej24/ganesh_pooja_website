@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Header.css";
+import { ThemeContext } from "../context/ThemeContext.jsx";
 
 export default function Header() {
+  const { dark, setDark } = useContext(ThemeContext);
+
   return (
     <header className="header">
       <div className="container header-row">
@@ -34,6 +37,14 @@ export default function Header() {
             Contact
           </NavLink>
         </nav>
+
+        {/* Theme Toggle Button */}
+        {/* <button
+          className="theme-toggle"
+          onClick={() => setDark(!dark)}
+        >
+          {dark ? "🌙" : "☀️"}
+        </button> */}
       </div>
     </header>
   );

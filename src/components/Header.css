@@ -21,3 +21,12 @@
 @media (max-width: 680px){
   .nav { gap: 10px; }
 }
+
+
+.theme-toggle {
+  margin-left: 16px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
