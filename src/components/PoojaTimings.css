@@ -1,7 +1,73 @@
-.section-title { margin: 0 0 14px; font-size: 28px; }
-.timings-grid {
-  display: grid; gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+.section-title {
+  margin: 0 0 16px;
+  font-size: 28px;
+  text-align: center;
 }
-.timing-card { padding: 16px; text-align: center; border: 1px solid #eee; }
-.timing-card h3 { margin: 0 0 6px; color: var(--brand); }
+
+/* Bigger cards layout */
+.timings-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Each card with its own background */
+.timing-card {
+  position: relative;
+  height: 260px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0);
+}
+
+/* Soft overlay for readability */
+.timing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0); /* faint dark layer */
+  z-index: 0;
+}
+
+.timing-card .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  background: transparent; /* let image show clearly */
+  transition: background .25s ease, transform .25s ease;
+}
+
+.timing-card:hover .overlay {
+  background: rgba(0,0,0,0);
+  transform: translateY(-2px);
+}
+
+.timing-card h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  color: var(--brand, #FF7A1A);
+  text-shadow: 0 1px 3px rgba(0,0,0,0);
+}
+
+.timing-card p {
+  margin: 0;
+  font-size: 17px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0);
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .timing-card {
+    height: 220px;
+  }
+}

@@ -1,1 +1,49 @@
 .home-sections { background: transparent; }
+
+.home-intro {
+  margin: 28px auto 8px;
+  text-align: center;
+  line-height: 1.7;
+  max-width: 980px;
+  padding: 0 16px;
+  color: #2a2a2a;
+}
+
+.home-intro p {
+  margin: 0 auto 18px;
+  font-size: 16.5px;
+}
+
+.home-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 12px auto 0;
+}
+
+.h-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.h-title {
+  display: block;
+  font-weight: 700;
+  font-size: 15.5px;
+}
+
+.h-sub {
+  display: block;
+  margin-top: 3px;
+  color: #666;
+  font-size: 13.5px;
+}
+
+/* Subtle polish for small screens */
+@media (max-width: 900px) {
+  .home-highlights {
+    grid-template-columns: 1fr;
+  }
+}

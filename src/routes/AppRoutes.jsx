@@ -5,6 +5,8 @@ import Events from "../pages/Events.jsx";
 import Gallery from "../pages/Gallery.jsx";
 import Packages from "../pages/Packages.jsx";
 import Contact from "../pages/Contact.jsx";
+import AboutUs from "../pages/AboutUs.jsx";
+import Aarti from "../pages/Aarti.jsx";
 
 export default function AppRoutes() {
   return (
@@ -14,6 +16,10 @@ export default function AppRoutes() {
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/packages" element={<Packages />} />
       <Route path="/contact" element={<Contact />} />
+
+      <Route path="/about" element={<AboutUs />} />
+      <Route path="/aarti" element={<Aarti />} />
+     
     </Routes>
   );
 }

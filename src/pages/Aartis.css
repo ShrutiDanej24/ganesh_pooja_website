@@ -1,0 +1,80 @@
+/* src/pages/Aarti.css */
+
+.aarti-sec {
+  padding: 60px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Grid layout */
+.aarti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.aarti-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.aarti-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Thumbnail */
+.aarti-thumb {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card body */
+.aarti-body {
+  padding: 16px;
+  text-align: left;
+}
+
+.aarti-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.aarti-body p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 4px 0;
+}
+
+/* Link */
+.lyrics-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #0077cc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.lyrics-link:hover {
+  color: #005999;
+  text-decoration: underline;
+}
