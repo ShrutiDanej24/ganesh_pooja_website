@@ -1,1 +1,29 @@
 /* keep for page-level overrides if needed */
+/* Filter section */
+.pkg-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pkg-filter label {
+  font-weight: 600;
+  color: #333;
+}
+
+.pkg-filter select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pkg-filter select:focus {
+  border-color: var(--brand, #e65100);
+  box-shadow: 0 0 0 2px rgba(230, 81, 0, 0.2);
+  outline: none;
+}
