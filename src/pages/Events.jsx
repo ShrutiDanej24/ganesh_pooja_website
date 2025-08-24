@@ -24,7 +24,7 @@ const events = [
     day: "12",
     dow: "Saturday",
     desc: "Victory of dharma; shastra/ayudha puja and processions.",
-    img: "/images/UpcomingEvents/ram.jpg",
+    img: "/images/UpcomingEvents/dushera.jpg",
   },
   {
     title: "Diwali",
@@ -72,10 +72,12 @@ export default function Events() {
   return (
     <section className="events-page">
       <div className="container">
-        <h2 className="page-title">Events & Festivals</h2>
-        <p className="page-subtitle">
-          Famous events and festivals you must experience
-        </p>
+        <div className="events-hero">
+          <h2 className="page-title">Events & Festivals</h2>
+          <p className="page-subtitle">
+            Famous events and festivals you must experience
+          </p>
+        </div>
 
         <div className="events-grid">
           {events.map((e) => (
@@ -83,6 +85,7 @@ export default function Events() {
               <div className="event-thumb">
                 <img src={e.img} alt={e.title} />
               </div>
+
               <div className="event-body">
                 <div className="event-title-row">
                   <h3 className="event-title">{e.title}</h3>

@@ -10,7 +10,10 @@ export default function Packages() {
       <div className="container">
         <div className="pkg-filter">
           <label>Filter by Category: </label>
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
             <option value="">All</option>
             <option value="shanti">Shanti Pujas</option>
             <option value="pitru">Pitru Puja</option>

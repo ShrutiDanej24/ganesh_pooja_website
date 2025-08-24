@@ -6,21 +6,20 @@ import "./Home.css";
 import HowItWorks from "../components/HowItWorks.jsx";
 import Services from "../components/Services.jsx";
 import UpcomingEvents from "../components/UpcomingEvents.jsx";
+import WhatYouGet from "../components/WhatYouGet.jsx";
 export default function Home() {
   return (
     <>
       <Hero />
 
-       <HowItWorks />
+      <HowItWorks />
 
       {/* Intro section */}
-     
 
       <div className="home-sections">
-        
-        <Services/>
+        <Services />
         <UpcomingEvents />
-        
+        <WhatYouGet />
       </div>
     </>
   );
