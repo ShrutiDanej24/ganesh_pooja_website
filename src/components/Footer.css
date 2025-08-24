@@ -1,11 +1,139 @@
-.footer { background: #111; color: #f1f1f1; margin-top: 40px; }
-.footer-grid {
-  display: grid; gap: 20px;
-  grid-template-columns: repeat(3,1fr);
-  padding: 32px 0;
+.footer {
+  background: #f7941d;
+  color: #fff;
+  margin-top: 40px;
 }
-.footer h4 { margin: 0 0 8px; color: #fff; }
-.footer-bottom { text-align: center; padding: 12px 0; border-top: 1px solid #222; color: #bbb; }
-@media (max-width: 820px){
-  .footer-grid { grid-template-columns: 1fr; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding: 40px 20px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  font-weight: 700;
+  border-left: 3px solid #fff;
+  padding-left: 8px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #222;
+}
+
+.footer-socials a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #222;
+}
+
+/* Upcoming pujas */
+.puja-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.puja-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.puja-item span {
+  font-size: 14px;
+  color: #fff;
+}
+
+.puja-item small {
+  display: block;
+  font-size: 12px;
+  color: #222;
+}
+
+/* Subscribe */
+.subscribe-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.subscribe-form button {
+  padding: 8px 12px;
+  border: none;
+  background: #b71c1c;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover {
+  background: #8b0000;
+}
+
+.footer-bottom {
+  background: #111;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  color: #ddd;
+}
+
+@media (max-width: 920px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-socials a {
+  margin-right: 10px;
+  font-size: 20px;  /* slightly bigger */
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #222;
 }

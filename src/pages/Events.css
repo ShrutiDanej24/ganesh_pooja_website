@@ -1,13 +1,39 @@
-/* ===== Events Page Base ===== */
+/* ===== Page Base ===== */
 .events-page {
   background: #f7f5f2;
-  padding: 0; /* no extra padding, so hero touches edges */
   margin: 0;
+  padding: 0;
 }
 
-/* ===== Title Banner (full-bleed) ===== */
-.page-title {
+/* ===== Hero (full width) ===== */
+.events-hero {
+  width: 100%;
+  background: url("/images/eventback.jpg") center/cover no-repeat;
+  height: 220px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.events-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* overlay for readability */
+}
+
+.page-title,
+.page-subtitle {
+  position: relative;
+  z-index: 1;
   text-align: center;
+}
+
+.page-title {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 800;
   margin-bottom: 6px;
@@ -15,54 +41,29 @@
 }
 
 .page-subtitle {
-  text-align: center;
-  opacity: 0.95;
-  margin-bottom: 0;
   font-size: 16px;
-  color: #f0f0f0;
   font-weight: 500;
-}
-
-.events-hero {
-  background: url("/images/eventback.jpg") center/cover no-repeat;
-  height: 220px;
-  margin: 0;  /* full bleed */
-  color: #fff;
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.events-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* Optional overlay for readability */
-  background: rgba(0,0,0,0.25);
-}
-
-.events-hero h2,
-.events-hero p {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-/* ===== Events Grid — edge to edge ===== */
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 24px;
-  width: 100%;
+  opacity: 0.95;
+  color: #f0f0f0;
   margin: 0;
-  padding: 20px; /* spacing from screen edges */
+}
+
+/* ===== Container override (only for Events page) ===== */
+.events-page .container {
+  max-width: 100%;         /* stretch across screen width */
+  margin: 0;               /* no auto-centering gaps */
+  padding: 27px 104px;      /* even padding on both sides */
   box-sizing: border-box;
 }
 
-/* Responsive breakpoints */
+/* ===== Events Grid ===== */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
 @media (max-width: 1200px) {
   .events-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -73,25 +74,25 @@
   .events-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== Card (equal height, neat grid) ===== */
+/* ===== Event Card ===== */
 .event-card {
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 
   display: flex;
   flex-direction: column;
-  min-width: 0; /* prevents overflow in grid */
+  min-width: 0; /* prevent overflow in grid columns */
 }
 
 .event-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.12);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
-/* equal thumb height for all */
+/* ===== Thumb ===== */
 .event-thumb {
   height: 180px;
   overflow: hidden;
@@ -105,7 +106,7 @@
   display: block;
 }
 
-/* body stretches evenly */
+/* ===== Body ===== */
 .event-body {
   padding: 14px 16px 18px;
   display: flex;
@@ -122,27 +123,26 @@
 }
 
 .event-title {
-  margin: 0;
   font-size: 18px;
   font-weight: 800;
   color: #1d1d1f;
+  margin: 0;
 }
 
 .event-date {
-  color: #8a8a8a;
   font-size: 13.5px;
-  margin-top: 2px;
+  color: #8a8a8a;
 }
 
 .event-desc {
+  font-size: 14px;
   color: #4a4a4a;
   line-height: 1.6;
-  font-size: 14px;
   margin-top: 4px;
 
-  overflow: hidden;              /* optional: truncate for equal heights */
+  overflow: hidden;              /* keep equal heights */
   display: -webkit-box;
-  -webkit-line-clamp: 3;         /* max 3 lines */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -153,17 +153,18 @@
   color: #e46a00;
   border-radius: 12px;
   padding: 8px 10px;
-  text-align: center;
   border: 1px solid #ffd8bb;
-  line-height: 1.1;
   display: grid;
+  text-align: center;
+  line-height: 1.1;
 }
 
 .date-pill .d { font-size: 18px; font-weight: 900; }
 .date-pill .w { font-size: 12px; font-weight: 700; }
 
-/* ===== Mobile Adjustments ===== */
+/* ===== Mobile tweaks ===== */
 @media (max-width: 640px) {
   .events-hero { height: 160px; }
-  .events-grid { padding: 12px; gap: 16px; }
+  .events-page .container { padding: 16px; }
+  .events-grid { gap: 16px; }
 }

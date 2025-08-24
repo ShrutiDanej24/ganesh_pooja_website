@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";   // 👈 add this
 import "./Hero.css";
 
 export default function Hero() {
-  const [city, setCity] = useState("Pune"); // default city
+  const [city, setCity] = useState("Pune");
   const [puja, setPuja] = useState("");
+  const navigate = useNavigate();   // 👈 hook for navigation
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now just redirect to booking page with params
-    window.location.href = `/booking?city=${city}&puja=${puja}`;
+    navigate(`/booking?city=${city}&puja=${puja}`);   // redirect with params
   };
 
   return (
@@ -17,12 +18,18 @@ export default function Hero() {
         <div className="container hero-grid">
           {/* Left side - text */}
           <div className="hero-text">
-            <h1>Book Authentic Poojas With Trusted Pandits</h1>
+            <h1 >Book Authentic Poojas <br/> With Trusted Pandits</h1>
+
             <p>
               From daily rituals to special ceremonies — easily reserve your
               pooja, seva, or homa online at your temple.
             </p>
-            <button className="btn">Start Booking</button>
+            <button
+              className="btn"
+              onClick={() => navigate("/booking")}   // 👈 go directly to booking page
+            >
+              Start Booking
+            </button>
           </div>
 
           {/* Right side - booking form */}

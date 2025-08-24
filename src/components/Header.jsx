@@ -10,8 +10,8 @@ export default function Header() {
     <header className="header">
       <div className="container header-row">
         <Link to="/" className="brand">
-          <img src="/images/icons/om.svg" alt="Om" className="brand-icon" />
-          <span>Ganesh Pooja</span>
+          <img src="/images/icons/logo.jpg" alt="Om" className="brand-icon" />
+          <span></span>
         </Link>
 
         <nav className="nav">
@@ -21,9 +21,9 @@ export default function Header() {
           <NavLink to="/about" className="nav-link">
             About Us
           </NavLink>
-          <NavLink to="/Aarti" className="nav-link">
+          {/* <NavLink to="/Aarti" className="nav-link">
             Aartis
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/events" className="nav-link">
             Events
           </NavLink>
@@ -31,7 +31,7 @@ export default function Header() {
             Gallery
           </NavLink>
           <NavLink to="/packages" className="nav-link">
-            Pooja Packages
+            Pooja Types
           </NavLink>
           <NavLink to="/contact" className="nav-link">
             Contact

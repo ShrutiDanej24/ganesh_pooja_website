@@ -71,14 +71,16 @@ const events = [
 export default function Events() {
   return (
     <section className="events-page">
-      <div className="container">
-        <div className="events-hero">
-          <h2 className="page-title">Events & Festivals</h2>
-          <p className="page-subtitle">
-            Famous events and festivals you must experience
-          </p>
-        </div>
+      {/* Full-width Hero */}
+      <div className="events-hero">
+        <h2 className="page-title">Events & Festivals</h2>
+        <p className="page-subtitle">
+          Famous events and festivals you must experience
+        </p>
+      </div>
 
+      {/* Container for Events */}
+      <div className="container">
         <div className="events-grid">
           {events.map((e) => (
             <article className="event-card" key={e.title}>

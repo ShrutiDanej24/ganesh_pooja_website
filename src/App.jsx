@@ -13,9 +13,10 @@ export default function App() {
         <AppRoutes />
       </main>
       <Footer />
-      <Link className="floating-cta btn" to="/contact" aria-label="Contact">
-        Book a Pooja
-      </Link>
+      <Link className="floating-cta btn" to="/booking" aria-label="Booking">
+  Book a Pooja
+</Link>
+
     </div>
   );
 }

@@ -30,3 +30,13 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+
+
+
+.brand-icon {
+  width: 148px;   /* increase width */
+  height: 100px;  /* increase height */
+  border-radius: 6px; /* optional: makes edges smoother if logo is not round */
+  object-fit: contain; /* keeps full image visible without stretching */
+}
