@@ -52,7 +52,7 @@ export default function ContactForm() {
         </div>
         <div className="card contact-side">
           <h3>Temple Address</h3>
-          <p>Shri Siddhivinayak Mandir Road, Your City</p>
+          <p>Shri Siddhivinayak Mandir Road, Pune City</p>
           <h3>Phone</h3>
           <p>+91-98765-43210</p>
           <h3>Email</h3>
