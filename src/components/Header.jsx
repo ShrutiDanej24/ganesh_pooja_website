@@ -11,9 +11,13 @@ export default function Header() {
     <header className="header">
       <div className="container header-row">
         <Link to="/" className="brand">
-          <img src="/images/icons/logo.jpg" alt="Om" className="brand-icon" />
-          <span></span>
-        </Link>
+  <img src="/images/icons/logo.jpg" alt="Om" className="brand-icon" />
+  <span className="brand-text">
+     <br />
+    {/* <small>सत्कर्म सेवा – service of righteous deeds</small> */}
+  </span>
+</Link>
+
 
         {/* Hamburger button */}
         <button
