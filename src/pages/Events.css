@@ -168,3 +168,64 @@
   .events-page .container { padding: 16px; }
   .events-grid { gap: 16px; }
 }
+
+
+/* ===== Mobile tweaks (append below your file) ===== */
+
+/* Tablets / big phones */
+@media (max-width: 900px) {
+  .events-hero { height: 200px; }                /* a bit shorter */
+  .events-page .container { padding: 20px; }      /* balanced side gutters */
+  .events-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+/* Phones */
+@media (max-width: 720px) {
+  .events-hero { height: 180px; }
+  .events-hero::before { background: rgba(0,0,0,0.4); }  /* improve text contrast */
+  .page-title { font-size: 24px; }
+  .page-subtitle { font-size: 14px; }
+
+  .events-page .container {
+    padding: 16px;                 /* equal L/R padding */
+    box-sizing: border-box;        /* avoid right-side overflow */
+  }
+
+  .events-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  .event-thumb { height: 150px; }  /* slightly shorter thumbs */
+  .event-title { font-size: 16px; }
+  .event-desc { font-size: 13.5px; line-height: 1.55; }
+  .date-pill { min-width: 56px; padding: 6px 8px; }
+  .date-pill .d { font-size: 16px; }
+  .date-pill .w { font-size: 11px; }
+}
+
+/* Keep 2-per-row on typical phones (override your old 1-column rule) */
+@media (max-width: 560px) {
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .events-hero { height: 160px; }
+  .event-thumb { height: 140px; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .events-grid { grid-template-columns: 1fr; }   /* fall back to 1 per row */
+  .event-thumb { height: 130px; }
+}
+/* Center single-column cards on small screens */
+@media (max-width: 560px) {
+  .events-grid {
+    grid-template-columns: 1fr;     /* 1 per row */
+    justify-items: center;          /* ✅ center the cards */
+  }
+
+  .event-card {
+    width: 100%;                    /* fill available width */
+    max-width: 360px;               /* ✅ prevent it from being too wide */
+  }
+}

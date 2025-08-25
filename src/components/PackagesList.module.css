@@ -143,3 +143,82 @@
   .pkgBody { padding: 12px; }
   .btn { padding: 9px 10px; font-size: 13px; }
 }
+
+/* ===== PackagesList – Mobile tweaks only ===== */
+
+/* Tablets / large phones */
+@media (max-width: 900px) {
+  .pkgGrid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 per row */
+    gap: 16px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .pkgGrid {
+    grid-template-columns: 1fr;             /* 1 per row */
+    gap: 14px;
+    justify-items: center;                  /* ✅ center cards */
+  }
+
+  .pkgCard {
+    max-width: 360px;                       /* keep card centered & elegant */
+    width: 100%;
+  }
+
+  .pkgBody { padding: 12px; gap: 8px; }
+  .pkgTitle { font-size: 16px; }
+  .pkgMeta { gap: 8px; }
+  .pkgPrice, .pkgDuration { font-size: 12px; padding: 3px 7px; }
+  .pkgList li { font-size: 13px; }
+
+  .pkgActions { flex-direction: column; gap: 8px; }
+  .btn { width: 100%; font-size: 13.5px; padding: 10px 12px; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .pkgCard { max-width: 320px; }
+  .pkgBody { padding: 10px; }
+  .pkgTitle { font-size: 15px; }
+  .btn { font-size: 13px; padding: 9px 10px; }
+}
+
+
+.pooja-hero__select {
+  appearance: none;           /* remove default arrow + styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+/* Style dropdown options */
+.pooja-hero__select option {
+  background: #ff7a18;   /* brand orange */
+  color: #fff;
+}
+.pooja-hero__select {
+  appearance: none;           /* remove default arrow + styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+/* Style dropdown options */
+.pooja-hero__select option {
+  background: #ff7a18;   /* brand orange */
+  color: #fff;
+}
+
+

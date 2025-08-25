@@ -1,43 +1,83 @@
 // src/data/packages.js
 const packages = [
-  // --- Shanti Pujas ---
+
+
+  // --- Havans ---
   {
-    id: "graha-yog-shanti",
-    title: "Graha Yog Shanti Puja",
-    img: "/images/poojas/graha-yog.jpg",
+    id: "chandi-havan",
+    title: "Chandi Havan",
+    img: "/images/poojas/chandi-havan.jpg",
+    price: "On Request",
+    duration: "2–3 hrs",
+    category: "havans",
+    includes: ["Chandi path", "Havan", "Samagri"],
+  },
+  {
+    id: "dhanvantri-havan",
+    title: "Dhanvantri Havan",
+    img: "/images/poojas/dhanvantri.jpg",
+    price: "On Request",
+    duration: "2 hrs",
+    category: "havans",
+    includes: ["Dhanvantri mantra japa", "Havan"],
+  },
+  {
+    id: "ganapathi-havan",
+    title: "Ganapathi Havan",
+    img: "/images/poojas/ganapathi-havan.png",
     price: "On Request",
     duration: "90 mins",
-    category: "shanti",
-    includes: ["Pandit dakshina", "Basic samagri", "Sankalp & Shanti path"],
+    category: "havans",
+    includes: ["Ganapati atharvashirsha", "Havan"],
   },
   {
-    id: "guru-chandal",
-    title: "Guru Chandal Yoga Shanti",
-    img: "/images/poojas/guru-chandal.jpg",
+    id: "laxmi-kubera-havan",
+    title: "Laxmi Kubera Havan",
+    img: "/images/poojas/laxmi-kubera.jpg",
     price: "On Request",
     duration: "120 mins",
-    category: "shanti",
-    includes: ["Guru shanti", "Navagraha japa", "Havan"],
+    category: "havans",
+    includes: ["Lakshmi-Kubera japa", "Havan"],
   },
   {
-    id: "kaal-sarp",
-    title: "Kaal Sarp Dosh Puja",
-    img: "/images/poojas/kaal-sarp.jpg",
+    id: "gayatri-havan",
+    title: "Gayatri Havan",
+    img: "/images/poojas/gayatri.jpg",
     price: "On Request",
-    duration: "150 mins",
-    category: "shanti",
-    includes: ["Rahu-Ketu shanti", "Havan", "Samagri"],
+    duration: "90–120 mins",
+    category: "havans",
+    includes: ["Gayatri japa", "Havan"],
   },
   {
-    id: "shani-ketu-shrapit",
-    title: "Shani Ketu Shrapit Dosh Nivaran",
-    img: "/images/poojas/shani-ketu.jpg",
+    id: "laxmi-narasimha-havan",
+    title: "Laxmi Narasimha Havan",
+    img: "/images/poojas/laxmi-narasimha.jpg",
     price: "On Request",
     duration: "120 mins",
-    category: "shanti",
-    includes: ["Shani-Ketu japa", "Havan", "Til-tarpan"],
+    category: "havans",
+    includes: ["Lakshmi-Narasimha mantra", "Havan"],
   },
   {
+    id: "navagraha-havan",
+    title: "Navagraha Havan",
+    img: "/images/poojas/navagraha-havan.jpg",
+    price: "On Request",
+    duration: "90–120 mins",
+    category: "havans",
+    includes: ["Navagraha japa", "Havan"],
+  },
+
+
+
+
+
+
+  // --- Shanti Pujas ---
+  
+
+
+  {
+
     id: "shani-dosha",
     title: "Shani Dosha Shanti Puja",
     img: "/images/poojas/shani-dosha.jpg",
@@ -159,69 +199,42 @@ const packages = [
     includes: ["Sankalp", "Aarti", "Mangal path"],
   },
 
-  // --- Havans ---
+
   {
-    id: "chandi-havan",
-    title: "Chandi Havan",
-    img: "/images/poojas/chandi-havan.jpg",
-    price: "On Request",
-    duration: "2–3 hrs",
-    category: "havans",
-    includes: ["Chandi path", "Havan", "Samagri"],
-  },
-  {
-    id: "dhanvantri-havan",
-    title: "Dhanvantri Havan",
-    img: "/images/poojas/dhanvantri.jpg",
-    price: "On Request",
-    duration: "2 hrs",
-    category: "havans",
-    includes: ["Dhanvantri mantra japa", "Havan"],
-  },
-  {
-    id: "ganapathi-havan",
-    title: "Ganapathi Havan",
-    img: "/images/poojas/ganapathi-havan.png",
+    id: "graha-yog-shanti",
+    title: "Graha Yog Shanti Puja",
+    img: "/images/poojas/graha-yog.jpg",
     price: "On Request",
     duration: "90 mins",
-    category: "havans",
-    includes: ["Ganapati atharvashirsha", "Havan"],
+    category: "shanti",
+    includes: ["Pandit dakshina", "Basic samagri", "Sankalp & Shanti path"],
   },
   {
-    id: "laxmi-kubera-havan",
-    title: "Laxmi Kubera Havan",
-    img: "/images/poojas/laxmi-kubera.jpg",
+    id: "guru-chandal",
+    title: "Guru Chandal Yoga Shanti",
+    img: "/images/poojas/guru-chandal.jpg",
     price: "On Request",
     duration: "120 mins",
-    category: "havans",
-    includes: ["Lakshmi-Kubera japa", "Havan"],
+    category: "shanti",
+    includes: ["Guru shanti", "Navagraha japa", "Havan"],
   },
   {
-    id: "gayatri-havan",
-    title: "Gayatri Havan",
-    img: "/images/poojas/gayatri.jpg",
+    id: "kaal-sarp",
+    title: "Kaal Sarp Dosh Puja",
+    img: "/images/poojas/kaal-sarp.jpg",
     price: "On Request",
-    duration: "90–120 mins",
-    category: "havans",
-    includes: ["Gayatri japa", "Havan"],
+    duration: "150 mins",
+    category: "shanti",
+    includes: ["Rahu-Ketu shanti", "Havan", "Samagri"],
   },
   {
-    id: "laxmi-narasimha-havan",
-    title: "Laxmi Narasimha Havan",
-    img: "/images/poojas/laxmi-narasimha.jpg",
+    id: "shani-ketu-shrapit",
+    title: "Shani Ketu Shrapit Dosh Nivaran",
+    img: "/images/poojas/shani-ketu.jpg",
     price: "On Request",
     duration: "120 mins",
-    category: "havans",
-    includes: ["Lakshmi-Narasimha mantra", "Havan"],
-  },
-  {
-    id: "navagraha-havan",
-    title: "Navagraha Havan",
-    img: "/images/poojas/navagraha-havan.jpg",
-    price: "On Request",
-    duration: "90–120 mins",
-    category: "havans",
-    includes: ["Navagraha japa", "Havan"],
+    category: "shanti",
+    includes: ["Shani-Ketu japa", "Havan", "Til-tarpan"],
   },
 ];
 

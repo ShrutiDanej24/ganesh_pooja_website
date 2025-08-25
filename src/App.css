@@ -4,3 +4,43 @@
   right: 20px;
   bottom: 20px;
 }
+
+.app-main { min-height: 70vh; }
+
+/* existing desktop CTA styles stay as they are */
+
+/* --- MOBILE ONLY (≤768px) --- */
+/* --- MOBILE ONLY (≤768px) --- */
+/* --- MOBILE ONLY (≤768px) --- */
+@media (max-width: 768px) {
+  .app { padding-bottom: 0; }   /* no extra bottom space needed now */
+
+  .floating-cta {
+    position: fixed;
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: auto;                /* ✅ shrink to fit text */
+    min-width: 120px;           /* still tappable */
+    padding: 10px 14px;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background: linear-gradient(135deg, #ff7a00, #ff3d3d);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    z-index: 1000;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .floating-cta {
+    min-width: 100px;           /* a bit smaller but still tappable */
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}

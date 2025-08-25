@@ -96,3 +96,36 @@
   color: var(--brand, #e65100);
   display: inline;          /* make sure it doesn’t break line */
 }
+
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }  /* ✅ 2 per row */
+  .services-head h2 { white-space: normal; }
+
+  .service-image {
+    height: 180px;    /* reduced size for phones */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .service-label {
+    padding: 10px 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-sec { padding: 36px 0 44px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }  /* still 2 per row */
+  .service-image { height: 160px; }
+}
+
+@media (max-width: 360px) {
+  .services-grid { grid-template-columns: 1fr; } /* ✅ stack on very small screens */
+  .service-image { height: 160px; }
+}

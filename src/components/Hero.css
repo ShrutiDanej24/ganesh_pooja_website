@@ -29,11 +29,28 @@
   margin-bottom: 14px;
 }
 
+/* ✅ Slide-in from left effect */
+.slide-left {
+  text-align: left;
+  transform: translateX(-100%);   /* start outside left */
+  animation: slideInLeft 1.5s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .hero-text p {
   margin-bottom: 18px;
   font-size: 18px;
   opacity: 0.9;
-  
 }
 
 .hero-form-card {
@@ -44,7 +61,6 @@
   max-width: 380px;
   width: 80%;
   height: 100%;
-
 }
 
 .hero-form-card h3 {
@@ -92,32 +108,4 @@
   .hero-form-card {
     margin: 0 auto;
   }
-}
-
-.typewriter {
-  display: block;
-}
-
-.line {
-  display: block;
-  overflow: hidden;               /* Hide text until revealed */
-  border-right: 3px solid #fff;   /* Cursor */
-  white-space: nowrap;            /* Keep text in one line */
-  letter-spacing: 2px;
-  animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
-}
-
-.line:nth-child(2) {
-  animation-delay: 2.5s; /* Start second line after first finishes */
-}
-
-/* Typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* Blinking cursor */
-@keyframes blink {
-  50% { border-color: transparent }
 }

@@ -108,3 +108,46 @@
   .contact-card, .contact-side { padding: 16px; border-radius: 12px; }
   .btn { width: 100%; }
 }
+/* ===== Mobile tweaks (append to your file) ===== */
+
+/* Stack columns sooner for tablets/small laptops */
+@media (max-width: 880px) {
+  .contact-wrap { grid-template-columns: 1fr; }
+}
+
+/* Phones */
+@media (max-width: 520px) {
+  .section { padding: 36px 0; }
+
+  /* equal left/right gutters */
+  .contact-wrap { padding: 0 12px; box-sizing: border-box; }
+
+  .contact-card,
+  .contact-side {
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  .contact-form { gap: 10px; }
+  .contact-form label { gap: 5px; }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .contact-wrap { padding: 0 10px; }
+  .contact-card, .contact-side { padding: 14px; }
+  .contact-form input, .contact-form textarea { font-size: 14px; }
+  .btn { font-size: 14px; }
+}

@@ -159,3 +159,44 @@
     height: 180px;
   }
 }
+/* Big phones / small tablets */
+@media (max-width: 720px) {
+  /* Hero a bit shorter + darker overlay for readability */
+  .events-hero { height: 240px; }
+  .events-hero::before { background: rgba(0,0,0,0.2); }
+
+  /* Hide arrows; users will swipe */
+  .carousel-head { justify-content: space-between; padding: 12px 0 4px; }
+  .nav-btn { display: none; }
+
+  /* Prevent tiny right-side gap when snapping */
+  .events-track {
+    gap: 14px;                       /* tighter gap fits small screens */
+    padding: 8px 12px 20px;          /* add side gutters */
+    scroll-padding-left: 12px;       /* snap start aligns with gutter */
+    scroll-padding-right: 12px;
+  }
+
+  /* 2 cards visible width-wise, thumb-friendly */
+  .event-card { width: 260px; }      /* ≈ two in view on many phones */
+  .event-thumb { height: 150px; background-size: cover; }
+  .event-title { font-size: 16px; }
+  .event-desc { font-size: 13.5px; line-height: 1.55; }
+}
+
+/* Normal phones */
+@media (max-width: 480px) {
+  .events-hero { height: 200px; }
+  .events-track { gap: 12px; padding: 8px 12px 18px; }
+  .event-card { width: 240px; }      /* smaller to keep 2 in row feel while swiping */
+  .event-thumb { height: 140px; }
+  .date-pill { min-width: 56px; padding: 6px 8px; }
+  .date-pill .d { font-size: 16px; }
+  .date-pill .w { font-size: 11px; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .event-card { width: 210px; }
+  .event-thumb { height: 130px; }
+}

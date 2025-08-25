@@ -121,3 +121,75 @@
 @media (max-width: 600px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+
+
+
+/* ===== Footer – Mobile tweaks (append) ===== */
+
+/* Tablets / big phones */
+@media (max-width: 920px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 28px 16px;            /* balanced side gutters */
+    box-sizing: border-box;
+  }
+
+  .footer-col h4 { font-size: 17px; margin-bottom: 12px; }
+  .footer-col p  { font-size: 14px; line-height: 1.55; }
+
+  /* Subscribe: keep inline but tighter */
+  .subscribe-form input { padding: 10px; }
+  .subscribe-form button { padding: 10px 12px; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;     /* stack cols */
+    gap: 18px;
+    padding: 24px 14px;
+  }
+
+  .footer-col h4 { font-size: 16px; }
+  .footer-col p  { font-size: 13.5px; }
+
+  /* Social icons: bigger tap targets, centered on mobile */
+  .footer-socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .footer-socials a {
+    font-size: 22px;
+    display: inline-flex;
+    width: 40px; height: 40px;             /* comfy tap area */
+    align-items: center; justify-content: center;
+  }
+
+  /* Upcoming pujas: compact */
+  .puja-item img { width: 52px; height: 52px; margin-right: 8px; }
+  .puja-item span { font-size: 13.5px; }
+  .puja-item small { font-size: 12px; }
+
+  /* Subscribe: stack vertically to avoid overflow */
+  .subscribe-form {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 520px;
+  }
+  .subscribe-form input,
+  .subscribe-form button {
+    width: 100%;
+    border-radius: 8px;                    /* independent rounding */
+  }
+  .subscribe-form button { padding: 12px 14px; font-weight: 700; }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .footer-grid { padding: 22px 12px; }
+  .puja-item img { width: 48px; height: 48px; }
+  .footer-bottom { padding: 10px 8px; font-size: 13px; }
+}

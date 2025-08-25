@@ -68,3 +68,40 @@
     height: 40px;
   }
 }
+/* ===== Mobile-first tweaks (desktop untouched) ===== */
+
+/* Tablets / large phones */
+@media (max-width: 900px) {
+  .whatyouget { padding: 48px 18px; }
+  .wy-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Phones */
+@media (max-width: 720px) {
+  .whatyouget { padding: 40px 14px; }
+  .section-title { font-size: 24px; }
+  .underline { margin-bottom: 22px; }
+
+  /* ✅ 2 per row on mobile */
+  .wy-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .wy-cell { padding: 16px; }
+  .wy-cell img { width: 70px; height: 90px; }
+  .wy-cell p { font-size: 14px; line-height: 1.45; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .whatyouget { padding: 32px 12px; }
+  .wy-grid { gap: 8px; }          /* subtle gap inside grid */
+  .wy-cell { padding: 14px; }
+  .wy-cell img { width: 56px; height: 72px; }
+  .wy-cell p { font-size: 13.5px; }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .wy-grid { grid-template-columns: 1fr; } /* stack if too tight */
+  .wy-cell img { width: 52px; height: 66px; }
+}
+

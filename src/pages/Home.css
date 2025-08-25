@@ -1,5 +1,32 @@
-.home-sections { background: transparent; }
+/* --- Reset / Globals --- */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;   /* ✅ no horizontal scroll / right-side gap */
+}
 
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Sections wrapper --- */
+.home-sections {
+  background: transparent;
+  padding: 16px;              /* mobile-first */
+  box-sizing: border-box;     /* ✅ padding included in width */
+  max-width: 100%;            /* ✅ no overflow */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Intro text */
 .home-intro {
   margin: 28px auto 8px;
   text-align: center;
@@ -14,11 +41,15 @@
   font-size: 16.5px;
 }
 
+/* Highlights Grid */
 .home-highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin: 12px auto 0;
+  width: 100%;
+  max-width: 100%;            /* ✅ no overflow */
+  box-sizing: border-box;
 }
 
 .h-item {
@@ -26,6 +57,7 @@
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 12px 14px;
+  max-width: 100%;            /* ✅ no overflow */
 }
 
 .h-title {
@@ -41,9 +73,33 @@
   font-size: 13.5px;
 }
 
-/* Subtle polish for small screens */
+/* Tablet collapse */
 @media (max-width: 900px) {
-  .home-highlights {
-    grid-template-columns: 1fr;
+  .home-highlights { grid-template-columns: 1fr; }
+}
+
+/* --- MOBILE ONLY tweaks --- */
+@media (max-width: 768px) {
+  .home-sections {
+    padding: 14px;
   }
+
+  .home-intro { padding: 0 12px; }
+  .home-intro p { font-size: 15px; }
+
+  .home-highlights {
+    gap: 12px;
+    margin: 12px 0 0;
+  }
+
+  .h-item { padding: 12px; }
+  .h-title { font-size: 15px; }
+  .h-sub { font-size: 13px; }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .home-sections { padding: 12px; }
+  .h-item { border-radius: 10px; }
+  .home-intro { margin: 20px auto 6px; }
 }

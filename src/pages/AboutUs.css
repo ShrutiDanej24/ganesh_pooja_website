@@ -1,74 +1,3 @@
-/* .about.section {
-  padding: 40px 0;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.about-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  object-fit: cover;
-}
-
-.about-text h2 {
-  font-size: clamp(28px, 4vw, 38px);
-  margin: 0 0 14px;
-  color: var(--brand, #e65100);
-  font-weight: 800;
-}
-
-.about-text p {
-  margin: 0 0 14px;
-  line-height: 1.75;
-  color: #2b2b2b;
-}
-
-.about-list {
-  margin: 12px 0 16px;
-  padding-left: 18px;
-  list-style: none;
-}
-.about-list li {
-  position: relative;
-  margin: 8px 0;
-  padding-left: 22px;
-  color: #3a3a3a;
-  font-weight: 500;
-}
-.about-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--brand, #e65100);
-  font-weight: 900;
-}
-
-
-.about .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .about-img {
-    order: -1; 
-  }
-} */
 
 /* -------- About base -------- */
 .about.section { padding: 40px 0; }
@@ -174,4 +103,41 @@
 .vm-card:hover .vm-icon {
   transform: scale(1.1);
   background: #ac7383;
+}
+/* ======== MOBILE-ONLY TWEAKS (desktop untouched) ======== */
+@media (max-width: 900px) {
+  .about.section { padding: 32px 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-img img { max-height: 360px; object-fit: cover; }
+
+  .vision-mission { padding: 64px 0; }
+  .vm-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 720px) {
+  .about.section { padding: 28px 0; }
+  .about .container { padding: 0 14px; }            /* balanced side gutters */
+  .about-text h2 { font-size: 24px; }
+  .about-text p { line-height: 1.65; }
+
+  .vision-mission { padding: 52px 0; }
+  .vision-mission::before { background: rgba(0,0,0,0.35); } /* better contrast */
+  .vm-card { padding: 20px; }
+  .vm-icon { width: 52px; height: 52px; font-size: 24px; }
+}
+
+@media (max-width: 480px) {
+  .about .container { padding: 0 12px; }            /* equal L/R padding */
+  .about-img img { max-height: 300px; }
+  .about-list { padding-left: 14px; }
+  .about-list li { padding-left: 20px; }
+
+  .vision-mission { padding: 44px 0; }
+  .vm-card { padding: 18px; }
+  .vm-icon { width: 48px; height: 48px; font-size: 22px; }
+}
+
+@media (max-width: 360px) {
+  .about .container { padding: 0 10px; }
+  .vm-card { padding: 16px; }
 }

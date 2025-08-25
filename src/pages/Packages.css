@@ -1,4 +1,3 @@
-
 /* Screen-reader only label, keeps accessibility while visually hidden */
 .sr-only {
   position: absolute !important;
@@ -12,22 +11,20 @@
 .pooja-hero {
   position: relative;
   width: 100%;
-  min-height: 200px;                     /* height of the strip */
-  background-image: url("/images/poojaback.jpg"); /* <- set your image */
+  min-height: 200px;                     
+  background-image: url("/images/poojaback.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   margin-bottom: 22px;
-  margin-top:-50px;
+  margin-top: -50px;
 }
 
 /* subtle dark overlay for text legibility */
 .pooja-hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(
-    0deg
-  );
+  background: linear-gradient(0deg, rgba(0,0,0,.3), rgba(0,0,0,.15));
 }
 
 /* Centered content */
@@ -41,6 +38,7 @@
   align-items: center;       /* horizontal centering */
   gap: 14px;
   text-align: center;
+  padding: 0 16px;
 }
 
 /* Heading in the center */
@@ -53,7 +51,7 @@
   text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
-/* Controls wrapper (for future addons) */
+/* Controls wrapper */
 .pooja-hero__controls {
   display: flex;
   gap: 12px;
@@ -65,37 +63,75 @@
 .pooja-hero__select {
   padding: 10px 14px;
   font-size: 15px;
-  border: 1px solid rgba(255,255,255,.7);
+  border: 1px solid rgba(0,0,0,.3);
   border-radius: 10px;
-  background: rgba(255,255,255,.15);
-  color: #fff;
+  background: rgba(255,255,255,.85);  /* light glass effect */
+  color: #111;                         /* black text (fixes white-on-white issue) */
   backdrop-filter: blur(6px);
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
-
-  /* NEW */
-  min-width: 400px;   /* makes dropdown wider */
-  text-align: center; /* optional: center the text */
+  min-width: 400px;
+  text-align: center;
 }
 .pooja-hero__select:focus {
   outline: none;
-  border-color: #fff;
-  box-shadow: 0 0 0 3px rgba(255,255,255,.25);
+  border-color: #333;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.15);
 }
 .pooja-hero__select option {
-  color: #111;           /* dropdown list text */
-  background: #fff;
+  color: #111 !important;
+  background: #fff !important;
 }
 
 /* Responsive */
+
+/* Tablets */
 @media (max-width: 900px) {
-  .pooja-hero { min-height: 200px; border-radius: 10px; }
-  .pooja-hero__content { min-height: 200px; }
-  .pooja-hero__title { font-size: 30px; }
+  .pooja-hero { 
+    min-height: 200px; 
+    border-radius: 10px; 
+    margin-top: 0; 
+  }
+  .pooja-hero__content { min-height: 200px; gap: 10px; }
+  .pooja-hero__title { font-size: 28px; }
+  .pooja-hero__select { min-width: 280px; }
 }
+
+/* Phones */
 @media (max-width: 600px) {
-  .pooja-hero { min-height: 180px; border-radius: 10px; }
-  .pooja-hero__content { min-height: 180px; gap: 10px; }
-  .pooja-hero__title { font-size: 26px; }
-  .pooja-hero__select { padding: 9px 12px; font-size: 14px; }
+  .pooja-hero { 
+    min-height: 180px; 
+    border-radius: 10px; 
+    margin-top: 0; 
+  }
+
+  .pooja-hero__overlay {
+    background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.18));
+  }
+
+  .pooja-hero__content { 
+    min-height: 180px; 
+    gap: 10px; 
+    padding: 0 12px; 
+  }
+  .pooja-hero__title { 
+    font-size: 24px; 
+    line-height: 1.15; 
+  }
+
+  .pooja-hero__select {
+    min-width: 0;
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .pooja-hero__title { font-size: 22px; }
+  .pooja-hero__content { padding: 0 10px; }
+  .pooja-hero__select { font-size: 13.5px; padding: 9px 10px; }
 }

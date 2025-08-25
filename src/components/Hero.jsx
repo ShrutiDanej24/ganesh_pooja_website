@@ -18,7 +18,11 @@ export default function Hero() {
         <div className="container hero-grid">
           {/* Left side - text */}
           <div className="hero-text">
-            <h1 >Book Authentic Poojas <br/> With Trusted Pandits</h1>
+    <h1 className="slide-left">
+  Book Authentic Poojas <br/> With Trusted Pandits
+</h1>
+
+
 
             <p>
               From daily rituals to special ceremonies — easily reserve your
@@ -64,3 +68,4 @@ export default function Hero() {
     </section>
   );
 }
+

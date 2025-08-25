@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Header.css";
 import { ThemeContext } from "../context/ThemeContext.jsx";
 
 export default function Header() {
   const { dark, setDark } = useContext(ThemeContext);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="header">
@@ -14,37 +15,36 @@ export default function Header() {
           <span></span>
         </Link>
 
-        <nav className="nav">
-          <NavLink to="/" end className="nav-link">
+        {/* Hamburger button */}
+        <button
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className={`nav ${menuOpen ? "open" : ""}`}>
+          <NavLink to="/" end className="nav-link" onClick={() => setMenuOpen(false)}>
             HOME
           </NavLink>
-          <NavLink to="/about" className="nav-link">
+          <NavLink to="/about" className="nav-link" onClick={() => setMenuOpen(false)}>
             ABOUT US
           </NavLink>
-          {/* <NavLink to="/Aarti" className="nav-link">
-            Aartis
-          </NavLink> */}
-          <NavLink to="/events" className="nav-link">
+          <NavLink to="/events" className="nav-link" onClick={() => setMenuOpen(false)}>
             EVENTS
           </NavLink>
-          <NavLink to="/gallery" className="nav-link">
-            Gallery
+          <NavLink to="/gallery" className="nav-link" onClick={() => setMenuOpen(false)}>
+            GALLERY
           </NavLink>
-          <NavLink to="/packages" className="nav-link">
+          <NavLink to="/packages" className="nav-link" onClick={() => setMenuOpen(false)}>
             PUJAS
           </NavLink>
-          <NavLink to="/contact" className="nav-link">
+          <NavLink to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
             CONTACT US
           </NavLink>
         </nav>
-
-        {/* Theme Toggle Button */}
-        {/* <button
-          className="theme-toggle"
-          onClick={() => setDark(!dark)}
-        >
-          {dark ? "🌙" : "☀️"}
-        </button> */}
       </div>
     </header>
   );

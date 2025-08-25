@@ -28,10 +28,10 @@ export default function Packages() {
               <option value="pitru">Pitru Puja</option>
               <option value="pujas">Pujas</option>
               <option value="havans">Havans</option>
-              <option value="jaaps">Jaaps</option>
+              {/* <option value="jaaps">Jaaps</option>
               <option value="paths">Paths</option>
               <option value="bhajans">Bhajans &amp; Chowki</option>
-              <option value="festival">Festival Pooja</option>
+              <option value="festival">Festival Pooja</option> */}
             </select>
           </div>
         </div>
