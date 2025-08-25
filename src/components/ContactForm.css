@@ -1,9 +1,110 @@
-.contact-wrap { display: grid; gap: 16px; grid-template-columns: 2fr 1fr; }
-.contact-card, .contact-side { padding: 16px; }
-.contact-form { display: grid; gap: 10px; }
-.contact-form input, .contact-form textarea {
-  width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ddd;
+/* ===== Contact Page – Full CSS with More Animations ===== */
+
+/* Full section background */
+.section {
+  background: #fdf3e6;
+  padding: 48px 0;
 }
-@media (max-width: 880px){
+
+/* Grid layout */
+.contact-wrap {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 2fr 1fr;
+}
+
+/* Cards */
+.contact-card,
+.contact-side {
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  animation: fadeInUp 0.8s ease both;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+/* Stagger effect – card order */
+.contact-card { animation-delay: 0.1s; }
+.contact-side { animation-delay: 0.3s; }
+
+/* Hover lift + glow */
+.contact-card:hover,
+.contact-side:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15),
+              0 0 18px rgba(230,81,0,0.25);  /* brand-colored glow */
+  animation: pulse 1.8s ease-in-out; /* subtle pulse */
+}
+
+/* Pulse effect */
+@keyframes pulse {
+  0%, 100% { transform: translateY(-8px) scale(1.03); }
+  50% { transform: translateY(-6px) scale(1.05); }
+}
+
+/* Entry animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact form layout */
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+.contact-form label {
+  font-weight: 600;
+  color: #333;
+  display: grid;
+  gap: 6px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--brand, #e65100);
+  box-shadow: 0 0 0 3px rgba(230,81,0,0.15);
+  outline: none;
+  background: #fff;
+}
+
+/* Button */
+.btn {
+  appearance: none;
+  border: none;
+  background: var(--brand, #e65100);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 6px 14px rgba(230,81,0,0.22);
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(230,81,0,0.28);
+}
+.btn:active { transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 880px) {
   .contact-wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .section { padding: 36px 0; }
+  .contact-card, .contact-side { padding: 16px; border-radius: 12px; }
+  .btn { width: 100%; }
 }

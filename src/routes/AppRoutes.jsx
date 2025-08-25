@@ -16,11 +16,9 @@ export default function AppRoutes() {
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/packages" element={<Packages />} />
       <Route path="/contact" element={<Contact />} />
-
       <Route path="/about" element={<AboutUs />} />
       <Route path="/aarti" element={<Aarti />} />
-       <Route path="/booking" element={<BookingPage />} /> {/* 👈 new */}
-     
+      <Route path="/booking" element={<BookingPage />} /> {/* 👈 new */}
     </Routes>
   );
 }

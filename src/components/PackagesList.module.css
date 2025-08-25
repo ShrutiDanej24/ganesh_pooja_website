@@ -1,164 +1,145 @@
-/* Grid wrapper section */
-section {
-  background: #fef9f5;
-  margin: 0;
-  padding: 0;
+/* Section wrapper */
+.pkgSection {
+  padding: 24px 0 48px;
+  background: #fff;
 }
 
-/* Override container inside Packages */
-section .container {
-  max-width: 100%;         
-  margin: 0;               
-  padding: 0 20px;          /* 20px left & right padding only */
-  box-sizing: border-box;
-}
-
-
-/* Grid layout */
+/* Grid */
 .pkgGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on desktop */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
 }
 
 /* Card */
 .pkgCard {
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 10px;
   background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s ease;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-
 .pkgCard:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border-color: #eaeaea;
 }
 
 /* Image */
 .pkgImg {
   width: 100%;
-  height: 160px;
-  object-fit: contain; /* prevents cropping */
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   display: block;
-  border-bottom: 1px solid #eee;
 }
 
-/* Card body */
+/* Body */
 .pkgBody {
-  padding: 14px;
+  padding: 14px 14px 16px;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  gap: 10px;
 }
 
 /* Title */
 .pkgTitle {
-  margin: 0 0 8px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
 }
 
-/* Price + Duration row */
+/* Meta */
 .pkgMeta {
   display: flex;
-  gap: 10px;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 14px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-
 .pkgPrice {
   font-weight: 700;
-  color: var(--accent, #d35400);
+  color: var(--brand, #e65100);
+  background: rgba(230, 81, 0, 0.08);
+  border: 1px solid rgba(230, 81, 0, 0.25);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 13px;
 }
-
 .pkgDuration {
-  color: var(--muted, #777);
-  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  background: #f5f5f7;
+  border: 1px solid #ececec;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
 }
 
-/* Features list */
+/* Includes list */
 .pkgList {
-  margin: 8px 0 12px;
-  padding-left: 18px;
-  flex: 1; /* pushes actions to bottom */
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
 }
-
 .pkgList li {
-  margin: 4px 0;
+  position: relative;
+  padding-left: 20px;
   font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+.pkgList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1.4;
+  font-weight: 700;
+  transform: translateY(1px);
+  font-size: 12px;
+  color: var(--brand, #e65100);
 }
 
 /* Actions */
 .pkgActions {
   display: flex;
   gap: 10px;
-  margin-top: auto; /* stick actions to bottom */
+  margin-top: 6px;
 }
-
 .btn {
-  padding: 8px 14px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  background: var(--brand, #0077cc);
+  appearance: none;
+  border: none;
+  background: var(--brand, #e65100);
   color: #fff;
-  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
   font-size: 14px;
+  cursor: pointer;
   text-decoration: none;
   text-align: center;
-  transition: 0.2s;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  box-shadow: 0 6px 14px rgba(230, 81, 0, .22);
 }
-
 .btn:hover {
-  background: #005fa3;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(230, 81, 0, .28);
 }
-
+.btn:active { transform: translateY(0); }
 .btnOutline {
-  background: transparent;
-  color: var(--brand, #0077cc);
-  border: 1px solid var(--brand, #0077cc);
+  background: #fff;
+  color: var(--brand, #e65100);
+  border: 1px solid var(--brand, #e65100);
+  box-shadow: none;
 }
+.btnOutline:hover { background: rgba(230, 81, 0, 0.06); }
 
-.btnOutline:hover {
-  background: var(--ring, rgba(0,119,204,0.1));
+/* Small screens */
+@media (max-width: 680px) {
+  .pkgBody { padding: 12px; }
+  .btn { padding: 9px 10px; font-size: 13px; }
 }
-
-/* ===========================
-   Responsive Breakpoints
-   =========================== */
-
-/* Medium screens: 3 per row */
-@media (max-width: 1200px) {
-  .pkgGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Tablets: 2 per row */
-@media (max-width: 900px) {
-  .pkgGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile: 1 per row */
-@media (max-width: 560px) {
-  .pkgGrid {
-    grid-template-columns: 1fr;
-  }
-
-  section .container {
-    padding: 16px;  /* smaller padding on mobile */
-  }
-}
-/* hit the global .container from inside this module */
-.pkgSection :global(.container) {
-  max-width: 100%;
-  margin: 0;          /* remove auto-centering */
-  padding: 0 -00px;    /* even left/right space; set 0 for true edge-to-edge */
-  box-sizing: border-box;
-}
-
-/* your existing grid & card styles… */

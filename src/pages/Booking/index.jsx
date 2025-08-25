@@ -7,10 +7,19 @@ const cities = ["Pune", "Mumbai", "Bengaluru", "Hyderabad", "Delhi", "Chennai"];
 
 const makeSlots = (date) => {
   // simple demo slots; disable past day
-  const base = ["07:30 AM", "09:00 AM", "10:30 AM", "12:00 PM", "02:30 PM", "04:00 PM", "06:00 PM"];
+  const base = [
+    "07:30 AM",
+    "09:00 AM",
+    "10:30 AM",
+    "12:00 PM",
+    "02:30 PM",
+    "04:00 PM",
+    "06:00 PM",
+  ];
   if (!date) return base;
   const selected = new Date(date);
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
   return selected < today ? [] : base;
 };
 
@@ -31,7 +40,7 @@ export default function BookingPage() {
 
   const slots = useMemo(() => makeSlots(form.date), [form.date]);
   const selectedPkg = useMemo(
-    () => packages.find(p => p.id === form.packageId),
+    () => packages.find((p) => p.id === form.packageId),
     [form.packageId]
   );
 
@@ -39,7 +48,13 @@ export default function BookingPage() {
 
   const submit = (e) => {
     e.preventDefault();
-    if (!form.packageId || !form.date || !form.slot || !form.name || !form.phone) {
+    if (
+      !form.packageId ||
+      !form.date ||
+      !form.slot ||
+      !form.name ||
+      !form.phone
+    ) {
       alert("Please complete required fields (puja, date, slot, name, phone).");
       return;
     }
@@ -54,7 +69,7 @@ export default function BookingPage() {
     <section className="booking-page">
       <div className="container booking-wrap">
         <div className="booking-main">
-          <h1 className="booking-title">Book a Pooja</h1>
+          <h1 className="booking-title"></h1>
 
           <form onSubmit={submit} className="booking-form">
             {/* Location & Puja */}
@@ -63,7 +78,9 @@ export default function BookingPage() {
                 City<span className="req">*</span>
                 <select value={form.city} onChange={set("city")}>
                   {cities.map((c) => (
-                    <option key={c} value={c}>{c}</option>
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
                   ))}
                 </select>
               </label>
@@ -72,7 +89,9 @@ export default function BookingPage() {
                 Select Puja<span className="req">*</span>
                 <select value={form.packageId} onChange={set("packageId")}>
                   {packages.map((p) => (
-                    <option key={p.id} value={p.id}>{p.title}</option>
+                    <option key={p.id} value={p.id}>
+                      {p.title}
+                    </option>
                   ))}
                 </select>
               </label>
@@ -82,20 +101,21 @@ export default function BookingPage() {
             <div className="form-row">
               <label>
                 Date<span className="req">*</span>
-               <input
-  type="date"
-  value={form.date}
-  min={new Date().toISOString().split("T")[0]}   // ⬅ ensures today or future
-  onChange={set("date")}
-/>
-
+                <input
+                  type="date"
+                  value={form.date}
+                  min={new Date().toISOString().split("T")[0]} // ⬅ ensures today or future
+                  onChange={set("date")}
+                />
               </label>
 
               <label>
                 Time Slot<span className="req">*</span>
                 <div className="slots">
                   {slots.length === 0 && (
-                    <span className="slot-empty">No slots for the selected day.</span>
+                    <span className="slot-empty">
+                      No slots for the selected day.
+                    </span>
                   )}
                   {slots.map((s) => (
                     <button
@@ -167,7 +187,11 @@ export default function BookingPage() {
             </label>
 
             <div className="form-actions">
-              <button type="button" className="btn ghost" onClick={() => navigate(-1)}>
+              <button
+                type="button"
+                className="btn ghost"
+                onClick={() => navigate(-1)}
+              >
                 Cancel
               </button>
               <button type="submit" className="btn primary">
@@ -178,7 +202,6 @@ export default function BookingPage() {
         </div>
 
         {/* Summary */}
-      
       </div>
     </section>
   );

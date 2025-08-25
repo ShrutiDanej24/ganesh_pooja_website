@@ -56,7 +56,7 @@ export default function ContactForm() {
           <h3>Phone</h3>
           <p>+91-98765-43210</p>
           <h3>Email</h3>
-          <p>ganeshpooja@example.com</p>
+          <p>satkarmaseva@example.com</p>
         </div>
       </div>
     </section>

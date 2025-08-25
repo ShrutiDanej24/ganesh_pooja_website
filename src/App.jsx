@@ -14,9 +14,8 @@ export default function App() {
       </main>
       <Footer />
       <Link className="floating-cta btn" to="/booking" aria-label="Booking">
-  Book a Pooja
-</Link>
-
+        Book a Pooja
+      </Link>
     </div>
   );
 }

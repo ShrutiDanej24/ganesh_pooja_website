@@ -16,25 +16,25 @@ export default function Header() {
 
         <nav className="nav">
           <NavLink to="/" end className="nav-link">
-            Home
+            HOME
           </NavLink>
           <NavLink to="/about" className="nav-link">
-            About Us
+            ABOUT US
           </NavLink>
           {/* <NavLink to="/Aarti" className="nav-link">
             Aartis
           </NavLink> */}
           <NavLink to="/events" className="nav-link">
-            Events
+            EVENTS
           </NavLink>
           <NavLink to="/gallery" className="nav-link">
             Gallery
           </NavLink>
           <NavLink to="/packages" className="nav-link">
-            Pooja Types
+            PUJAS
           </NavLink>
           <NavLink to="/contact" className="nav-link">
-            Contact
+            CONTACT US
           </NavLink>
         </nav>
 
